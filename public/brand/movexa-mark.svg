@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 48 48" role="img" aria-label="MOVEXA MEDIA">
+  <defs>
+    <linearGradient id="mvx" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#071B55"/>
+      <stop offset="38%" stop-color="#3023AE"/>
+      <stop offset="66%" stop-color="#6C3BFF"/>
+      <stop offset="100%" stop-color="#D728A9"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#mvx)" fill-rule="evenodd" d="M5 41 L5 9 Q5 8 6 8 L12 8 Q13 8 13.6 9 L24 24 L34.4 9 Q35 8 36 8 L42 8 Q43 8 43 9 L43 41 Q43 42 42 42 L36 42 Q35 42 35 41 L35 20 L25 33 Q24 34.5 23 33 L13 20 L13 41 Q13 42 12 42 L6 42 Q5 42 5 41 Z M21 18.5 L31 24 L21 29.5 Z"/>
+</svg>
