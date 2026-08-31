@@ -118,15 +118,15 @@ export const contactSteps = {
   ],
 };
 
-/** Update social links before launch. */
+/** Social links: set "#" placeholders to real URLs before launch. */
 export const contact = {
   /** digits only, country code first — used in https://wa.me/ links */
   whatsapp: "94764015423",
   whatsappDisplay: "+94 76 401 5423",
   email: "hellomovexamedia@gmail.com",
-  instagram: "#",
+  instagram: "https://www.instagram.com/movexamedia/",
+  linkedin: "https://www.linkedin.com/in/movexa-media-385a07432",
   tiktok: "#",
   facebook: "#",
-  linkedin: "#",
   youtube: "#",
 };

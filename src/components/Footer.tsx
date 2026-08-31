@@ -26,13 +26,16 @@ const COLS = [
   },
 ];
 
-const SOCIAL: [string, string][] = [
-  ["Instagram", contact.instagram],
-  ["TikTok", contact.tiktok],
-  ["Facebook", contact.facebook],
-  ["LinkedIn", contact.linkedin],
-  ["YouTube", contact.youtube],
-];
+// only render socials that have a real URL set
+const SOCIAL: [string, string][] = (
+  [
+    ["Instagram", contact.instagram],
+    ["LinkedIn", contact.linkedin],
+    ["TikTok", contact.tiktok],
+    ["Facebook", contact.facebook],
+    ["YouTube", contact.youtube],
+  ] as [string, string][]
+).filter(([, href]) => href && href !== "#");
 
 export function Footer() {
   return (
