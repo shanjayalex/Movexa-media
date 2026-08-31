@@ -32,7 +32,7 @@ export function Showreel() {
         <Reveal delay={0.1}>
           <div
             ref={frameRef}
-            className="group relative mx-auto mt-14 aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-ink-900"
+            className="group relative mx-auto mt-10 aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-ink-900 sm:mt-14"
           >
             {autoplay ? (
               <iframe
@@ -53,8 +53,8 @@ export function Showreel() {
             )}
 
             {/* scrims — hide YouTube chrome top/bottom + add cinematic depth */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-ink-950 to-transparent" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-ink-950 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-ink-950 via-ink-950/80 to-transparent" />
+            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent" />
             <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/40 via-transparent to-transparent" />
             <div className="grain-layer pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay" />
 
@@ -87,7 +87,7 @@ export function Showreel() {
           </div>
         </Reveal>
 
-        <div className="mt-14 flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-x-5 gap-y-1 sm:mt-14 sm:gap-x-6 sm:gap-y-2">
           {SYSTEM.map((s, i) => (
             <Reveal key={s} delay={i * 0.05}>
               <span className="font-display text-xl font-medium text-white/85 sm:text-2xl">{s}</span>

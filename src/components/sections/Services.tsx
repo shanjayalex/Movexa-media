@@ -132,20 +132,20 @@ function Card({ s, index }: { s: Service; index: number }) {
         onPointerMove={onMove}
         onPointerLeave={reset}
         data-cursor="hover"
-        className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-7 transition-[transform,border-color] duration-300 ease-expo hover:border-white/25 sm:p-9"
+        className="glass group relative flex h-full flex-col overflow-hidden rounded-2xl p-6 transition-[transform,border-color] duration-300 ease-expo hover:border-white/25 sm:p-9"
         style={{ transformStyle: "preserve-3d" }}
       >
-        <div className="flex items-start justify-between gap-6">
-          <div>
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0">
             <span className="font-mono text-xs tracking-[0.3em] text-magenta">{s.no}</span>
-            <h3 className="mt-3 font-display text-2xl font-semibold sm:text-3xl">{s.title}</h3>
+            <h3 className="mt-3 font-display text-xl font-semibold sm:text-3xl">{s.title}</h3>
           </div>
-          <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-xl border border-white/10">
+          <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-xl border border-white/10 sm:h-20 sm:w-20">
             <ServiceVisual kind={s.visual} />
           </div>
         </div>
 
-        <p className="mt-5 max-w-md text-sm text-muted sm:text-base">{s.blurb}</p>
+        <p className="mt-4 max-w-md text-sm text-muted sm:mt-5 sm:text-base">{s.blurb}</p>
 
         <ul className="mt-6 flex flex-wrap gap-2">
           {s.includes.map((i) => (
@@ -175,7 +175,7 @@ export function Services() {
           title="From idea to impact."
           intro="MOVEXA combines strategy, production, design and social media marketing under one creative team."
         />
-        <div className="mt-16 grid gap-5 md:grid-cols-2">
+        <div className="mt-10 grid gap-4 sm:mt-16 sm:gap-5 md:grid-cols-2">
           {services.map((s, i) => (
             <Card key={s.no} s={s} index={i} />
           ))}

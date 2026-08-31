@@ -82,7 +82,7 @@ export function Contact() {
         <span className="eyebrow">Start a project</span>
         <RevealText text="Let's create." className="mt-4 font-display font-semibold display-xl" />
 
-        <div className="glass mt-14 overflow-hidden rounded-3xl">
+        <div className="glass mt-10 overflow-hidden rounded-3xl sm:mt-14">
           {/* progress */}
           <div className="flex gap-1.5 p-2">
             {STEPS.map((_, i) => (

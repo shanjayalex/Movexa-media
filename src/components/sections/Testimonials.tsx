@@ -16,7 +16,7 @@ export function Testimonials() {
 
       <div
         ref={track}
-        className="no-scrollbar mt-14 flex cursor-grab gap-5 overflow-x-auto px-[5vw] pb-6 active:cursor-grabbing"
+        className="no-scrollbar mt-10 flex cursor-grab gap-4 overflow-x-auto px-[5vw] pb-6 active:cursor-grabbing sm:mt-14 sm:gap-5"
       >
         {testimonials.map((t, i) => (
           <motion.figure

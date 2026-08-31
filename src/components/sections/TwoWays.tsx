@@ -61,7 +61,7 @@ export function TwoWays() {
         ref={ref}
         onPointerMove={onMove}
         onPointerLeave={() => interactive && setSplit(50)}
-        className="relative mt-14 grid overflow-hidden border-y border-white/10 md:h-[68vh] md:grid-cols-[var(--l)_var(--r)]"
+        className="relative mt-10 grid overflow-hidden border-y border-white/10 sm:mt-14 md:h-[68vh] md:grid-cols-[var(--l)_var(--r)]"
         style={
           {
             "--l": `${split}%`,
@@ -72,7 +72,9 @@ export function TwoWays() {
         {[LEFT, RIGHT].map((panel, i) => (
           <div
             key={panel.title}
-            className="relative flex flex-col justify-center gap-6 p-8 sm:p-14"
+            className={`relative flex flex-col justify-center gap-6 px-5 py-9 sm:p-14 ${
+              i === 1 ? "border-t border-white/10 md:border-t-0" : ""
+            }`}
             style={{
               backgroundImage:
                 i === 0
@@ -100,7 +102,7 @@ export function TwoWays() {
               <a
                 href="#contact"
                 data-cursor="open"
-                className="mt-8 inline-block font-display text-lg font-medium text-white underline-offset-8 hover:underline"
+                className="mt-7 inline-flex items-center gap-2 self-start rounded-full border border-white/25 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.18em] text-white transition-colors hover:border-white/70 hover:bg-white/[0.05] sm:mt-8"
               >
                 {panel.cta}
               </a>

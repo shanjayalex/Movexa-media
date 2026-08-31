@@ -17,20 +17,22 @@ export function Industries() {
   const Panel = ({ ind, i }: { ind: (typeof industries)[number]; i: number }) => (
     <article
       className={`relative flex shrink-0 items-center overflow-hidden ${
-        simple ? "h-[68vh] w-[84vw] snap-center rounded-2xl" : "h-screen w-screen"
+        simple
+          ? "h-[52vh] min-h-[360px] w-[86vw] snap-center rounded-2xl"
+          : "h-screen w-screen"
       }`}
       style={{
         backgroundImage: `radial-gradient(80% 90% at 15% 20%, ${ind.tint[0]}4d, transparent 60%), radial-gradient(90% 90% at 90% 90%, ${ind.tint[1]}4d, transparent 55%), linear-gradient(160deg,#0a0a1a,#050510)`,
       }}
     >
       <div className="grain-layer pointer-events-none absolute inset-0 opacity-[0.12] mix-blend-overlay" />
-      <span className="pointer-events-none absolute right-6 top-6 font-mono text-[0.6rem] tracking-[0.3em] text-white/25">
+      <span className="pointer-events-none absolute right-5 top-5 font-mono text-[0.6rem] tracking-[0.3em] text-white/25 sm:right-6 sm:top-6">
         {String(i + 1).padStart(2, "0")} / {String(n).padStart(2, "0")}
       </span>
-      <div className="container-x">
+      <div className={simple ? "px-6" : "container-x"}>
         <span className="font-mono text-xs uppercase tracking-[0.3em] text-white/60">{ind.name}</span>
-        <h3 className="mt-6 max-w-4xl font-display font-semibold display-xl">“{ind.line}”</h3>
-        <p className="mt-6 text-muted">{ind.note}</p>
+        <h3 className="mt-4 max-w-4xl font-display font-semibold display-xl sm:mt-6">“{ind.line}”</h3>
+        <p className="mt-4 text-sm text-muted sm:mt-6 sm:text-base">{ind.note}</p>
       </div>
     </article>
   );

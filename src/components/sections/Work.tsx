@@ -17,7 +17,7 @@ export function Work() {
       <div className="container-x">
         <SectionHeading eyebrow="Stories we've helped move" title="Selected work." />
 
-        <div className="mt-16 grid auto-rows-min gap-5 sm:grid-cols-12">
+        <div className="mt-10 grid auto-rows-min gap-8 sm:mt-16 sm:gap-5 sm:grid-cols-12">
           {projects.map((p, i) => (
             <Reveal
               key={p.slug}
@@ -45,7 +45,7 @@ export function Work() {
                     <p className="mt-1 text-sm text-white/70">{p.summary}</p>
                   </div>
                 </MediaFrame>
-                <div className="mt-3 flex items-baseline justify-between gap-4">
+                <div className="mt-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between sm:gap-4">
                   <h3 className="font-display text-lg font-medium">{p.title}</h3>
                   <span className="font-mono text-[0.62rem] uppercase tracking-[0.2em] text-muted">
                     {p.industry} · {p.year}

@@ -46,7 +46,7 @@ export function Approach() {
       <div className="container-x">
         <SectionHeading eyebrow="The MOVEXA approach" title="One team. The whole process." />
 
-        <div ref={root} className="relative mt-16 pl-10 sm:pl-16">
+        <div ref={root} className="relative mt-12 pl-10 sm:mt-16 sm:pl-16">
           {/* rail */}
           <div className="absolute left-[13px] top-2 h-[calc(100%-1rem)] w-px bg-white/10 sm:left-[23px]" />
           <div

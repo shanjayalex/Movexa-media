@@ -11,7 +11,7 @@ export function Section({
   className?: string;
 }) {
   return (
-    <section id={id} className={`relative py-24 sm:py-32 lg:py-40 ${className}`}>
+    <section id={id} className={`relative py-16 sm:py-28 lg:py-40 ${className}`}>
       {children}
     </section>
   );
@@ -41,7 +41,7 @@ export function SectionHeading({
       )}
       <RevealText
         text={title}
-        className="mt-5 font-display font-semibold display-xl"
+        className="mt-4 font-display font-semibold display-xl sm:mt-5"
       />
       {intro && (
         <Reveal delay={0.1}>

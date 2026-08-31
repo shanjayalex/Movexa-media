@@ -25,7 +25,7 @@ export function Hero() {
   const ghostY = useTransform(scrollYProgress, [0, 1], [0, reduced ? 0 : 160]);
 
   return (
-    <section ref={ref} className="relative min-h-[100svh] overflow-hidden">
+    <section ref={ref} className="relative min-h-[90svh] overflow-hidden sm:min-h-[100svh]">
       {/* giant ghost wordmark */}
       <motion.span
         aria-hidden
@@ -62,7 +62,7 @@ export function Hero() {
         </motion.div>
       ))}
 
-      <div className="container-x relative flex min-h-[100svh] flex-col justify-center pt-28">
+      <div className="container-x relative flex min-h-[90svh] flex-col justify-end pb-14 pt-28 sm:min-h-[100svh] sm:justify-center sm:pb-0">
         <motion.p
           className="eyebrow"
           initial={reduced ? undefined : { opacity: 0, y: 20 }}
@@ -97,7 +97,7 @@ export function Hero() {
         </motion.h1>
 
         <motion.p
-          className="mt-8 max-w-xl text-base text-muted sm:text-lg"
+          className="mt-5 max-w-xl text-[0.95rem] text-muted sm:mt-8 sm:text-lg"
           initial={reduced ? undefined : { opacity: 0, y: 20 }}
           animate={reduced ? undefined : { opacity: 1, y: 0 }}
           transition={{ delay: 0.75, duration: 0.8 }}
@@ -107,7 +107,7 @@ export function Hero() {
         </motion.p>
 
         <motion.div
-          className="mt-10 flex flex-wrap items-center gap-4"
+          className="mt-7 flex flex-col gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4 [&>a]:w-full sm:[&>a]:w-auto"
           initial={reduced ? undefined : { opacity: 0, y: 20 }}
           animate={reduced ? undefined : { opacity: 1, y: 0 }}
           transition={{ delay: 0.9, duration: 0.8 }}

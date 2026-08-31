@@ -11,7 +11,7 @@ export function WhyMovexa() {
           className="max-w-5xl font-display font-semibold display-xl"
         />
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-10 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
           {whyPoints.map((p, i) => (
             <Reveal key={p.no} delay={i * 0.07} className="h-full">
               <div className="group flex h-full flex-col bg-ink-950 p-8 transition-colors duration-300 hover:bg-ink-900">

@@ -12,7 +12,7 @@ export function Packages() {
           title="Content that doesn't stop."
         />
 
-        <div className="mt-16 grid gap-5 lg:grid-cols-3">
+        <div className="mt-10 grid gap-4 sm:mt-16 sm:gap-5 lg:grid-cols-3">
           {packages.map((p, i) => (
             <Reveal key={p.name} delay={i * 0.08} className="h-full">
               <div

@@ -1,11 +1,11 @@
 import { motion } from "framer-motion";
 import { Section } from "../ui/Section";
 import { RevealText, Reveal } from "../ui/Reveal";
-import { usePrefersReducedMotion } from "@/lib/hooks";
+import { useMediaQuery, usePrefersReducedMotion } from "@/lib/hooks";
 import { allReels, ytThumb, onThumbError } from "@/data/reels";
 import { openReels } from "../ui/ReelPlayer";
 
-// 4 drifting columns, each a rotating slice of the real reel set
+// drifting columns, each a rotating slice of the real reel set
 const COLUMNS = [
   { ids: [0, 5, 10, 15, 2], dur: 40, dir: -1, tilt: -7 },
   { ids: [3, 8, 13, 18, 6], dur: 48, dir: 1, tilt: -2 },
@@ -40,6 +40,8 @@ function Tile({ id }: { id: string }) {
 
 export function SocialWall() {
   const reduced = usePrefersReducedMotion();
+  const narrow = useMediaQuery("(max-width: 640px)");
+  const columns = narrow ? COLUMNS.slice(0, 2) : COLUMNS;
 
   return (
     <Section id="social" className="overflow-hidden">
@@ -54,14 +56,14 @@ export function SocialWall() {
         </Reveal>
       </div>
 
-      <div className="edge-fade-x relative mt-14 flex justify-center gap-3 px-3 [perspective:1400px] sm:gap-5 sm:px-4">
-        {COLUMNS.map((col, ci) => {
+      <div className="edge-fade-x relative mt-12 flex justify-center gap-3 px-3 [perspective:1400px] sm:mt-14 sm:gap-5 sm:px-4">
+        {columns.map((col, ci) => {
           const ids = [...col.ids, ...col.ids].map((n) => allReels[n % allReels.length]);
           return (
             <motion.div
               key={ci}
-              className="flex w-[42vw] shrink-0 flex-col gap-3 sm:w-[190px] sm:gap-5"
-              style={{ rotateY: reduced ? 0 : col.tilt }}
+              className="flex w-[44vw] shrink-0 flex-col gap-3 sm:w-[190px] sm:gap-5"
+              style={{ rotateY: reduced || narrow ? 0 : col.tilt }}
               animate={reduced ? undefined : { y: col.dir === -1 ? ["0%", "-50%"] : ["-50%", "0%"] }}
               transition={{ duration: col.dur, repeat: Infinity, ease: "linear" }}
             >

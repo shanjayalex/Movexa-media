@@ -35,9 +35,13 @@ export function Stage() {
 
     const onScroll = () => {
       const h = window.innerHeight;
-      scroll.current = Math.min(1, window.scrollY / Math.max(1, h));
-      setOpacity(1 - Math.min(1, Math.max(0, (window.scrollY - h * 0.5) / (h * 0.7))));
-      setVisible(window.scrollY < h * 1.7);
+      const y = window.scrollY;
+      scroll.current = Math.min(1, y / Math.max(1, h));
+      // fade out within the hero on mobile so it never bleeds into the next section
+      const fadeStart = narrow ? h * 0.15 : h * 0.5;
+      const fadeSpan = narrow ? h * 0.45 : h * 0.7;
+      setOpacity(1 - Math.min(1, Math.max(0, (y - fadeStart) / fadeSpan)));
+      setVisible(y < (narrow ? h * 0.85 : h * 1.7));
     };
     onScroll();
     window.addEventListener("pointermove", onMove, { passive: true });
@@ -47,7 +51,7 @@ export function Stage() {
       window.removeEventListener("pointermove", onMove);
       window.removeEventListener("scroll", onScroll);
     };
-  }, []);
+  }, [narrow]);
 
   if (reduced) {
     return <div aria-hidden className="pointer-events-none fixed inset-0 z-0 bg-brand-radial" />;
@@ -76,8 +80,8 @@ export function Stage() {
         <pointLight position={[3, -4, 8]} intensity={30} color="#3023AE" distance={40} />
 
         <group
-          position={narrow ? [0.3, 3.6, -2] : [3.9, -0.6, 0]}
-          scale={narrow ? 0.46 : 0.82}
+          position={narrow ? [0.2, 2.9, -2] : [3.9, -0.6, 0]}
+          scale={narrow ? 0.44 : 0.82}
         >
           <MovexaM3D pointer={pointer} scroll={scroll} quality={tier} />
         </group>
