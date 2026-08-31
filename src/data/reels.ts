@@ -37,6 +37,9 @@ export const socialReels: string[] = [
 /** MOVEXA MEDIA website showreel — landscape 16:9. */
 export const showreelId = "fo4noqySmJY";
 
+/** Landscape reel used as the "Built for modern brands" section backdrop. */
+export const industriesBgId = "N82s6qjWLtY";
+
 /** Everything, for the social wall / showreel. */
 export const allReels: string[] = [
   ...coconutIslandReels,
