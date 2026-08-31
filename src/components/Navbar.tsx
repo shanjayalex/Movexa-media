@@ -54,7 +54,7 @@ export function Navbar() {
             to="/"
             onClick={() => scrollToTarget(0)}
             data-cursor="hover"
-            className="flex items-center gap-2.5"
+            className="-my-1 flex items-center gap-2.5 py-1"
           >
             <MarkM className="h-8 w-8" />
             <span className="font-display text-sm font-semibold tracking-tightest">

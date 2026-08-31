@@ -57,14 +57,14 @@ export function Footer() {
               <h3 className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-white/40">
                 {col.title}
               </h3>
-              <ul className="mt-4 space-y-2">
+              <ul className="mt-3 space-y-0.5">
                 {col.links.map(([label, hash]) => (
                   <li key={label}>
                     <Link
                       to="/"
                       onClick={() => setTimeout(() => scrollToTarget(hash), 60)}
                       data-cursor="hover"
-                      className="text-sm text-white/70 transition-colors hover:text-white"
+                      className="inline-block py-2 text-sm text-white/70 transition-colors hover:text-white"
                     >
                       {label}
                     </Link>
@@ -77,7 +77,7 @@ export function Footer() {
             <h3 className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-white/40">
               Social
             </h3>
-            <ul className="mt-4 space-y-2">
+            <ul className="mt-3 space-y-0.5">
               {SOCIAL.map(([label, href]) => (
                 <li key={label}>
                   <a
@@ -85,7 +85,7 @@ export function Footer() {
                     target="_blank"
                     rel="noopener"
                     data-cursor="open"
-                    className="text-sm text-white/70 transition-colors hover:text-white"
+                    className="inline-block py-2 text-sm text-white/70 transition-colors hover:text-white"
                   >
                     {label}
                   </a>
@@ -102,7 +102,7 @@ export function Footer() {
                 <a
                   href={`mailto:${contact.email}`}
                   data-cursor="open"
-                  className="break-all text-white/70 transition-colors hover:text-white"
+                  className="inline-block break-all py-1 text-white/70 transition-colors hover:text-white"
                 >
                   {contact.email}
                 </a>
@@ -113,7 +113,7 @@ export function Footer() {
                   target="_blank"
                   rel="noopener"
                   data-cursor="open"
-                  className="text-white/70 transition-colors hover:text-white"
+                  className="inline-block py-1 text-white/70 transition-colors hover:text-white"
                 >
                   WhatsApp {contact.whatsappDisplay}
                 </a>

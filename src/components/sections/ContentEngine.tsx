@@ -75,17 +75,51 @@ export function ContentEngine() {
         </div>
 
         {narrow ? (
-          /* ---- mobile: camera + output cloud ---- */
-          <div className="mt-12 flex flex-col items-center gap-8">
-            <div className="flex items-center gap-3 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-white/60">
-              <span className="glass rounded-lg px-3 py-2">Raw footage</span>
-              <span className="text-magenta">→</span>
+          /* ---- mobile: raw footage → camera → output cloud, with a live signal line ---- */
+          <div className="mt-10 flex flex-col items-center">
+            <span className="glass rounded-lg px-4 py-2.5 font-mono text-[0.58rem] uppercase tracking-[0.2em] text-white/70">
+              Raw footage in
+            </span>
+
+            <div className="relative h-12 w-px bg-white/12">
+              {!reduced &&
+                [0, 1, 2].map((k) => (
+                  <motion.span
+                    key={k}
+                    className="absolute left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-magenta"
+                    animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
+                    transition={{ duration: 1.6, repeat: Infinity, delay: k * 0.53, ease: "easeIn" }}
+                  />
+                ))}
             </div>
-            <CameraCore small />
-            <div className="flex flex-wrap justify-center gap-2">
+
+            <div className="relative">
+              {!reduced && (
+                <motion.span
+                  className="absolute inset-0 rounded-2xl border border-magenta/40"
+                  animate={{ scale: [1, 1.35], opacity: [0.6, 0] }}
+                  transition={{ duration: 2.4, repeat: Infinity, ease: "easeOut" }}
+                />
+              )}
+              <CameraCore small />
+            </div>
+
+            <div className="relative h-12 w-px bg-white/12">
+              {!reduced &&
+                [0, 1, 2, 3].map((k) => (
+                  <motion.span
+                    key={k}
+                    className="absolute left-1/2 h-1.5 w-1.5 -translate-x-1/2 rounded-full bg-violet-bright"
+                    animate={{ top: ["0%", "100%"], opacity: [0, 1, 0] }}
+                    transition={{ duration: 1.4, repeat: Infinity, delay: k * 0.35, ease: "easeOut" }}
+                  />
+                ))}
+            </div>
+
+            <div className="mt-4 flex flex-wrap justify-center gap-2">
               {engineOutputs.map((out, i) => (
-                <Reveal key={out} delay={i * 0.04}>
-                  <span className="rounded-full border border-white/12 bg-ink-900/80 px-3 py-1.5 font-mono text-[0.58rem] uppercase tracking-[0.12em] text-white/80">
+                <Reveal key={out} delay={i * 0.05}>
+                  <span className="rounded-full border border-white/15 bg-ink-900/80 px-3.5 py-2 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-white/85">
                     {out}
                   </span>
                 </Reveal>

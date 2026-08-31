@@ -27,7 +27,7 @@ export function FinalCta() {
         </Reveal>
 
         <Reveal delay={0.18}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:mt-10 sm:flex-row sm:flex-wrap sm:gap-4 [&>a]:w-full sm:[&>a]:w-auto">
             <MagneticLink
               href="#contact"
               onClick={(e) => {
@@ -51,7 +51,7 @@ export function FinalCta() {
         </Reveal>
 
         <Reveal delay={0.24}>
-          <p className="mt-8 text-sm text-white/50">
+          <p className="mt-7 text-sm text-white/55">
             Have footage already?{" "}
             <a
               href="#contact"
@@ -60,7 +60,7 @@ export function FinalCta() {
                 scrollToTarget("#contact");
               }}
               data-cursor="open"
-              className="text-white underline-offset-4 hover:underline"
+              className="inline-block py-1 font-medium text-white underline underline-offset-4"
             >
               Send your footage →
             </a>

@@ -30,60 +30,62 @@ export function Showreel() {
         <RevealText text="Press play." className="mt-4 font-display font-semibold display-xl" />
 
         <Reveal delay={0.1}>
-          <div
-            ref={frameRef}
-            className="group relative mx-auto mt-10 aspect-video w-full max-w-5xl overflow-hidden rounded-2xl border border-white/10 bg-ink-900 sm:mt-14"
-          >
-            {autoplay ? (
-              <iframe
-                className="pointer-events-none absolute left-1/2 top-1/2 h-[122%] w-[122%] -translate-x-1/2 -translate-y-1/2"
-                src={ytLoopEmbed(showreelId)}
-                title="MOVEXA MEDIA — showreel"
-                allow="autoplay; encrypted-media; picture-in-picture"
-                loading="lazy"
-                tabIndex={-1}
-              />
-            ) : (
-              <img
-                src={ytThumbLandscape(showreelId)}
-                onError={onThumbError}
-                alt="MOVEXA MEDIA showreel"
-                className="absolute inset-0 h-full w-full object-cover"
-              />
-            )}
-
-            {/* scrims — hide YouTube chrome top/bottom + add cinematic depth */}
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-ink-950 via-ink-950/80 to-transparent" />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink-950 via-ink-950/80 to-transparent" />
-            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/40 via-transparent to-transparent" />
-            <div className="grain-layer pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay" />
-
-            <span className="pointer-events-none absolute bottom-4 left-4 font-mono text-[0.6rem] uppercase tracking-[0.24em] text-white/70">
-              MOVEXA · Showreel
-            </span>
-
-            <button
-              onClick={() => setOpen(true)}
-              data-cursor="play"
-              className="absolute bottom-4 right-4 flex items-center gap-2 rounded-full border border-white/25 bg-black/40 px-4 py-2 font-mono text-[0.6rem] uppercase tracking-[0.18em] text-white backdrop-blur-sm transition-colors hover:border-white/60 hover:bg-black/60"
+          {/* full-bleed on mobile, contained card on desktop */}
+          <div className="-mx-[1.15rem] mt-8 sm:mx-auto sm:mt-14 sm:max-w-5xl">
+            <div
+              ref={frameRef}
+              className="group relative aspect-[4/3] w-full overflow-hidden border-y border-white/10 bg-ink-900 sm:aspect-video sm:rounded-2xl sm:border"
             >
-              <span className="border-y-[5px] border-l-[8px] border-y-transparent border-l-white" />
-              Watch with sound
-            </button>
+              {autoplay ? (
+                <iframe
+                  className="pointer-events-none absolute left-1/2 top-1/2 h-[132%] w-[132%] min-h-full min-w-full -translate-x-1/2 -translate-y-1/2 sm:h-[122%] sm:w-[122%]"
+                  src={ytLoopEmbed(showreelId)}
+                  title="MOVEXA MEDIA — showreel"
+                  allow="autoplay; encrypted-media; picture-in-picture"
+                  loading="lazy"
+                  tabIndex={-1}
+                />
+              ) : (
+                <img
+                  src={ytThumbLandscape(showreelId)}
+                  onError={onThumbError}
+                  alt="MOVEXA MEDIA showreel"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              )}
 
-            {/* full-cover click target when it's just a poster */}
-            {!autoplay && (
+              {/* scrims — hide YouTube chrome top/bottom + add cinematic depth */}
+              <div className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-ink-950 via-ink-950/70 to-transparent" />
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-ink-950 via-ink-950/85 to-transparent" />
+              <div className="grain-layer pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-overlay" />
+
+              <span className="pointer-events-none absolute bottom-4 left-4 font-mono text-[0.58rem] uppercase tracking-[0.22em] text-white/70">
+                MOVEXA · Showreel
+              </span>
+
               <button
                 onClick={() => setOpen(true)}
                 data-cursor="play"
-                aria-label="Play showreel"
-                className="absolute inset-0 grid place-items-center"
+                className="absolute bottom-3 right-3 flex items-center gap-2 rounded-full border border-white/30 bg-black/55 px-4 py-3 font-mono text-[0.58rem] uppercase tracking-[0.14em] text-white backdrop-blur-sm transition-colors hover:border-white/60 hover:bg-black/70 sm:bottom-4 sm:right-4"
               >
-                <span className="flex h-24 w-24 items-center justify-center rounded-full border border-white/50 bg-black/25 font-mono text-[0.58rem] uppercase tracking-[0.2em] backdrop-blur-sm transition-transform duration-500 ease-expo group-hover:scale-110">
-                  Play<br />Showreel
-                </span>
+                <span className="border-y-[5px] border-l-[8px] border-y-transparent border-l-white" />
+                Watch with sound
               </button>
-            )}
+
+              {/* full-cover click target when it's just a poster */}
+              {!autoplay && (
+                <button
+                  onClick={() => setOpen(true)}
+                  data-cursor="play"
+                  aria-label="Play showreel"
+                  className="absolute inset-0 grid place-items-center"
+                >
+                  <span className="flex h-24 w-24 items-center justify-center rounded-full border border-white/50 bg-black/25 font-mono text-[0.58rem] uppercase tracking-[0.2em] backdrop-blur-sm transition-transform duration-500 ease-expo group-hover:scale-110">
+                    Play<br />Showreel
+                  </span>
+                </button>
+              )}
+            </div>
           </div>
         </Reveal>
 

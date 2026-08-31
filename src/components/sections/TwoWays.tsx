@@ -102,7 +102,7 @@ export function TwoWays() {
               <a
                 href="#contact"
                 data-cursor="open"
-                className="mt-7 inline-flex items-center gap-2 self-start rounded-full border border-white/25 px-5 py-2.5 font-mono text-xs uppercase tracking-[0.18em] text-white transition-colors hover:border-white/70 hover:bg-white/[0.05] sm:mt-8"
+                className="mt-7 inline-flex items-center gap-2 self-start rounded-full border border-white/25 px-6 py-3.5 font-mono text-xs uppercase tracking-[0.16em] text-white transition-colors hover:border-white/70 hover:bg-white/[0.05] sm:mt-8 sm:py-3"
               >
                 {panel.cta}
               </a>

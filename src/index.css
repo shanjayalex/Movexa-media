@@ -82,25 +82,31 @@
 
   .eyebrow {
     font-family: theme("fontFamily.mono");
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 500;
-    letter-spacing: 0.28em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: #9898a8;
   }
+  @media (min-width: 640px) {
+    .eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.26em;
+    }
+  }
 
   .display-hero {
-    font-size: clamp(3.2rem, 12.5vw, 11rem);
+    font-size: clamp(2.8rem, 11.5vw, 11rem);
     letter-spacing: -0.035em;
     word-spacing: 0.12em;
-    line-height: 0.88;
+    line-height: 0.9;
   }
 
   .display-xl {
-    font-size: clamp(2.5rem, 7.5vw, 6rem);
-    letter-spacing: -0.025em;
-    word-spacing: 0.1em;
-    line-height: 0.95;
+    font-size: clamp(2.15rem, 7vw, 6rem);
+    letter-spacing: -0.02em;
+    word-spacing: 0.08em;
+    line-height: 0.98;
   }
 
   .text-gradient {

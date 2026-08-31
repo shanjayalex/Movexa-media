@@ -30,7 +30,7 @@ export function Hero() {
       <motion.span
         aria-hidden
         style={{ y: ghostY }}
-        className="pointer-events-none absolute left-1/2 top-[46%] -translate-x-1/2 -translate-y-1/2 select-none font-display text-[26vw] font-bold leading-none tracking-tightest text-white/[0.035]"
+        className="pointer-events-none absolute left-1/2 top-[46%] hidden -translate-x-1/2 -translate-y-1/2 select-none font-display text-[26vw] font-bold leading-none tracking-tightest text-white/[0.035] sm:block"
       >
         MOVEXA
       </motion.span>
@@ -64,7 +64,7 @@ export function Hero() {
 
       <div className="container-x relative flex min-h-[90svh] flex-col justify-end pb-14 pt-28 sm:min-h-[100svh] sm:justify-center sm:pb-0">
         <motion.p
-          className="eyebrow"
+          className="eyebrow !tracking-[0.16em] sm:!tracking-[0.28em]"
           initial={reduced ? undefined : { opacity: 0, y: 20 }}
           animate={reduced ? undefined : { opacity: 1, y: 0 }}
           transition={{ delay: 0.35, duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
@@ -74,7 +74,7 @@ export function Hero() {
 
         <motion.h1
           style={{ y: titleY }}
-          className="mt-5 font-display font-bold display-hero"
+          className="mt-4 font-display font-bold display-hero sm:mt-5"
         >
           <motion.span
             className="block"

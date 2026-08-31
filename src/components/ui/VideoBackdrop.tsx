@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import { usePerfTier, usePrefersReducedMotion } from "@/lib/hooks";
+import { usePrefersReducedMotion } from "@/lib/hooks";
 import { ytLoopEmbed, ytThumbLandscape, onThumbError } from "@/data/reels";
 
 /**
@@ -19,10 +19,10 @@ export function VideoBackdrop({
   overlay?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
-  const inView = useInView(ref, { margin: "40% 0px 40% 0px" });
+  const inView = useInView(ref, { margin: "30% 0px 30% 0px" });
   const reduced = usePrefersReducedMotion();
-  const tier = usePerfTier();
-  const play = inView && !reduced && tier === "high";
+  // a background video iframe is cheap even on phones — only skip it for reduced-motion
+  const play = inView && !reduced;
 
   return (
     <div

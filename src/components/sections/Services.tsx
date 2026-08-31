@@ -145,20 +145,20 @@ function Card({ s, index }: { s: Service; index: number }) {
           </div>
         </div>
 
-        <p className="mt-4 max-w-md text-sm text-muted sm:mt-5 sm:text-base">{s.blurb}</p>
+        <p className="mt-3.5 max-w-md text-sm text-muted sm:mt-5 sm:text-base">{s.blurb}</p>
 
-        <ul className="mt-6 flex flex-wrap gap-2">
+        <ul className="mt-4 flex flex-wrap gap-1.5 sm:mt-6 sm:gap-2">
           {s.includes.map((i) => (
             <li
               key={i}
-              className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 font-mono text-[0.62rem] uppercase tracking-[0.14em] text-white/70"
+              className="rounded-full border border-white/10 bg-white/[0.03] px-2.5 py-1 font-mono text-[0.58rem] uppercase tracking-[0.1em] text-white/65 sm:px-3 sm:text-[0.62rem] sm:tracking-[0.14em]"
             >
               {i}
             </li>
           ))}
         </ul>
 
-        <div className="mt-auto pt-8">
+        <div className="mt-auto pt-5 sm:pt-8">
           <span className="inline-block h-px w-0 bg-brand-gradient transition-all duration-500 ease-expo group-hover:w-full" />
         </div>
       </div>

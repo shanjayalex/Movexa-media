@@ -131,7 +131,7 @@ export function Contact() {
                             key={n}
                             onClick={() => toggleNeed(n)}
                             data-cursor="hover"
-                            className={`rounded-full border px-4 py-2 font-mono text-[0.68rem] uppercase tracking-[0.12em] transition-colors ${
+                            className={`rounded-full border px-4 py-3 font-mono text-[0.66rem] uppercase tracking-[0.08em] transition-colors sm:py-2 sm:text-[0.68rem] sm:tracking-[0.12em] ${
                               form.need.includes(n)
                                 ? "border-magenta bg-magenta/15 text-white"
                                 : "border-white/15 text-white/70 hover:border-white/40"
@@ -150,7 +150,7 @@ export function Contact() {
                             key={b}
                             onClick={() => setForm((f) => ({ ...f, business: b }))}
                             data-cursor="hover"
-                            className={`rounded-full border px-4 py-2 font-mono text-[0.68rem] uppercase tracking-[0.12em] transition-colors ${
+                            className={`rounded-full border px-4 py-3 font-mono text-[0.66rem] uppercase tracking-[0.08em] transition-colors sm:py-2 sm:text-[0.68rem] sm:tracking-[0.12em] ${
                               form.business === b
                                 ? "border-magenta bg-magenta/15 text-white"
                                 : "border-white/15 text-white/70 hover:border-white/40"
@@ -210,12 +210,12 @@ export function Contact() {
           </div>
 
           {!sent && (
-            <div className="flex items-center justify-between border-t border-white/10 p-6 sm:px-10">
+            <div className="flex items-center justify-between border-t border-white/10 px-3 py-3 sm:px-10 sm:py-6">
               <button
                 onClick={() => setStep((s) => Math.max(0, s - 1))}
                 disabled={step === 0}
                 data-cursor="hover"
-                className="font-mono text-xs uppercase tracking-[0.2em] text-white/50 enabled:hover:text-white disabled:opacity-30"
+                className="rounded-full px-4 py-3 font-mono text-xs uppercase tracking-[0.2em] text-white/50 enabled:hover:text-white disabled:opacity-30"
               >
                 ← Back
               </button>

@@ -24,8 +24,11 @@ export function Industries() {
           : "h-screen w-screen"
       }`}
       style={{
-        // translucent so the video backdrop reads through, darker on the text side
-        backgroundImage: `radial-gradient(70% 90% at 12% 30%, ${ind.tint[0]}30, transparent 60%), radial-gradient(80% 90% at 92% 88%, ${ind.tint[1]}2b, transparent 55%), linear-gradient(102deg, rgba(3,3,10,0.85) 0%, rgba(3,3,10,0.48) 46%, rgba(6,5,18,0.18) 100%)`,
+        // translucent so the video backdrop reads through — heavier, even scrim on
+        // the mobile card; a lighter left-weighted one for the desktop wide panel
+        backgroundImage: simple
+          ? `radial-gradient(85% 80% at 15% 25%, ${ind.tint[0]}33, transparent 60%), linear-gradient(180deg, rgba(3,3,10,0.86) 0%, rgba(3,3,10,0.6) 45%, rgba(4,4,12,0.8) 100%)`
+          : `radial-gradient(70% 90% at 12% 30%, ${ind.tint[0]}30, transparent 60%), radial-gradient(80% 90% at 92% 88%, ${ind.tint[1]}2b, transparent 55%), linear-gradient(102deg, rgba(3,3,10,0.85) 0%, rgba(3,3,10,0.48) 46%, rgba(6,5,18,0.18) 100%)`,
       }}
     >
       <span className="pointer-events-none absolute right-5 top-5 font-mono text-[0.6rem] tracking-[0.3em] text-white/40 sm:right-6 sm:top-6">
@@ -47,10 +50,12 @@ export function Industries() {
   if (simple) {
     return (
       <section id="industries" className="relative overflow-hidden py-20">
-        <VideoBackdrop id={industriesBgId} overlay="bg-ink-950/62" />
+        <VideoBackdrop id={industriesBgId} overlay="bg-ink-950/72" />
+        {/* extra darkening behind the heading */}
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-[22rem] bg-gradient-to-b from-ink-950 from-30% via-ink-950/88 to-transparent" />
         <div
           className="container-x relative"
-          style={{ textShadow: "0 2px 28px rgba(0,0,0,0.85)" }}
+          style={{ textShadow: "0 2px 28px rgba(0,0,0,0.9)" }}
         >
           <span className="eyebrow">Built for</span>
           <RevealText
