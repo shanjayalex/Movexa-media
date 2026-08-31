@@ -59,8 +59,7 @@ campaign, and surfaced in:
 
 | What | Where |
 |---|---|
-| WhatsApp number (`94XXXXXXXXXX`) | `src/data/misc.ts` → `contact.whatsapp` |
-| Social + email links | `src/data/misc.ts` → `contact` |
+| Social links (`#` placeholders) | `src/data/misc.ts` → `contact` (email + WhatsApp are set) |
 | Testimonials (placeholder) | `src/data/misc.ts` → `testimonials` |
 | Add more case studies | `src/data/portfolio.ts` (3 real projects wired; add new ones with their reel IDs) |
 | About behind-the-scenes photos | `public/about/` — see `public/about/README.txt`, then set `USE_LOCAL_PHOTOS = true` in `src/components/sections/About.tsx` |

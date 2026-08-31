@@ -92,13 +92,31 @@ export function Footer() {
           </div>
           <div>
             <h3 className="font-mono text-[0.62rem] uppercase tracking-[0.24em] text-white/40">
-              Location
+              Contact
             </h3>
-            <p className="mt-4 text-sm text-white/70">
-              Sri Lanka
-              <br />
-              Available Nationwide
-            </p>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li>
+                <a
+                  href={`mailto:${contact.email}`}
+                  data-cursor="open"
+                  className="break-all text-white/70 transition-colors hover:text-white"
+                >
+                  {contact.email}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={`https://wa.me/${contact.whatsapp}`}
+                  target="_blank"
+                  rel="noopener"
+                  data-cursor="open"
+                  className="text-white/70 transition-colors hover:text-white"
+                >
+                  WhatsApp {contact.whatsappDisplay}
+                </a>
+              </li>
+              <li className="pt-1 text-white/50">Sri Lanka · Available Nationwide</li>
+            </ul>
           </div>
         </div>
 

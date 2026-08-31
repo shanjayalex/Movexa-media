@@ -118,10 +118,12 @@ export const contactSteps = {
   ],
 };
 
-/** Update these before launch. */
+/** Update social links before launch. */
 export const contact = {
-  whatsapp: "94XXXXXXXXXX",
-  email: "hello@movexamedia.com",
+  /** digits only, country code first — used in https://wa.me/ links */
+  whatsapp: "94764015423",
+  whatsappDisplay: "+94 76 401 5423",
+  email: "hellomovexamedia@gmail.com",
   instagram: "#",
   tiktok: "#",
   facebook: "#",
